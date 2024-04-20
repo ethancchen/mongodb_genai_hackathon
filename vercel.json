@@ -1,4 +1,5 @@
-[
-    { "source": "/(.*)", "destination": "/scripts/app" }
+{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/api/index" }
   ]
 }
