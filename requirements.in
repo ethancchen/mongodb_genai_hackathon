@@ -12,3 +12,7 @@ matplotlib
 
 # jupyter
 jupyter
+
+# backend
+flask
+requests
