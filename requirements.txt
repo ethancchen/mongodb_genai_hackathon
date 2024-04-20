@@ -61,6 +61,8 @@ fsspec==2024.3.1
     #   llama-index-legacy
 greenlet==3.0.3
     # via sqlalchemy
+gunicorn==22.0.0
+    # via -r requirements.in
 h11==0.14.0
     # via httpcore
 httpcore==1.0.5
@@ -178,7 +180,9 @@ openai==1.23.2
     #   llama-index-core
     #   llama-index-legacy
 packaging==24.0
-    # via marshmallow
+    # via
+    #   gunicorn
+    #   marshmallow
 pandas==2.2.2
     # via
     #   llama-index-core

@@ -5,3 +5,6 @@ pymongo
 
 # backend
 flask
+
+# deployment
+gunicorn
