@@ -42,5 +42,5 @@ def get_answer():
     return jsonify({"message": resp})
 
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5601)
+# if __name__ == "__main__":
+#     app.run(host="0.0.0.0", port=5601)
