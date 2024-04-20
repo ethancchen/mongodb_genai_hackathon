@@ -1,5 +1,4 @@
 from flask import Flask, jsonify, request
-from llama_index.core import SimpleDirectoryReader, StorageContext, VectorStoreIndex
 from llama_index.core.llms import ChatMessage
 from llama_index.llms.fireworks import Fireworks
 
