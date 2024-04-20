@@ -1,6 +1,18 @@
 # main development
 llama-index
 llama-index-llms-solar
+llama-index-vector-stores-mongodb
+llama-index-embeddings-fireworks==0.1.2
+llama-index-llms-fireworks
+datasets  # for HuggingFace
+pymongo
+certifi  # for pymongo
+pandas
+matplotlib
 
 # jupyter
 jupyter
+
+# backend
+flask
+requests
