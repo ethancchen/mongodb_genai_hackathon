@@ -6,6 +6,8 @@
 #
 aiohttp==3.9.5
     # via
+    #   datasets
+    #   fsspec
     #   llama-index-core
     #   llama-index-legacy
 aiosignal==1.3.1
@@ -37,10 +39,16 @@ dataclasses-json==0.6.4
     # via
     #   llama-index-core
     #   llama-index-legacy
+datasets==2.19.0
+    # via -r requirements.in
 deprecated==1.2.14
     # via
     #   llama-index-core
     #   llama-index-legacy
+dill==0.3.8
+    # via
+    #   datasets
+    #   multiprocess
 dirtyjson==1.0.8
     # via
     #   llama-index-core
@@ -49,14 +57,22 @@ distro==1.9.0
     # via openai
 dnspython==2.6.1
     # via pymongo
+filelock==3.13.4
+    # via
+    #   datasets
+    #   huggingface-hub
+fireworks-ai==0.14.0
+    # via -r requirements.in
 flask==3.0.3
     # via -r requirements.in
 frozenlist==1.4.1
     # via
     #   aiohttp
     #   aiosignal
-fsspec==2024.3.1
+fsspec[http]==2024.3.1
     # via
+    #   datasets
+    #   huggingface-hub
     #   llama-index-core
     #   llama-index-legacy
 greenlet==3.0.3
@@ -69,10 +85,15 @@ httpcore==1.0.5
     # via httpx
 httpx==0.27.0
     # via
+    #   fireworks-ai
     #   llama-index-core
     #   llama-index-legacy
     #   llamaindex-py-client
     #   openai
+httpx-sse==0.4.0
+    # via fireworks-ai
+huggingface-hub==0.22.2
+    # via datasets
 idna==3.7
     # via
     #   anyio
@@ -107,9 +128,11 @@ llama-index-core==0.10.30
     #   llama-index-question-gen-openai
     #   llama-index-readers-file
     #   llama-index-readers-llama-parse
+    #   llama-index-vector-stores-mongodb
     #   llama-parse
 llama-index-embeddings-openai==0.1.8
     # via
+    #   -r requirements.in
     #   llama-index
     #   llama-index-cli
 llama-index-indices-managed-llama-cloud==0.1.5
@@ -139,6 +162,8 @@ llama-index-readers-file==0.1.19
     # via llama-index
 llama-index-readers-llama-parse==0.1.4
     # via llama-index
+llama-index-vector-stores-mongodb==0.1.4
+    # via -r requirements.in
 llama-parse==0.4.1
     # via llama-index-readers-llama-parse
 llamaindex-py-client==0.1.18
@@ -155,6 +180,8 @@ multidict==6.0.5
     # via
     #   aiohttp
     #   yarl
+multiprocess==0.70.16
+    # via datasets
 mypy-extensions==1.0.0
     # via typing-inspect
 nest-asyncio==1.6.0
@@ -171,9 +198,11 @@ nltk==3.8.1
     #   llama-index-legacy
 numpy==1.26.4
     # via
+    #   datasets
     #   llama-index-core
     #   llama-index-legacy
     #   pandas
+    #   pyarrow
 openai==1.23.2
     # via
     #   llama-index-agent-openai
@@ -181,22 +210,35 @@ openai==1.23.2
     #   llama-index-legacy
 packaging==24.0
     # via
+    #   datasets
     #   gunicorn
+    #   huggingface-hub
     #   marshmallow
 pandas==2.2.2
     # via
+    #   -r requirements.in
+    #   datasets
     #   llama-index-core
     #   llama-index-legacy
 pillow==10.3.0
-    # via llama-index-core
+    # via
+    #   fireworks-ai
+    #   llama-index-core
+pyarrow==16.0.0
+    # via datasets
+pyarrow-hotfix==0.6
+    # via datasets
 pydantic==2.7.0
     # via
+    #   fireworks-ai
     #   llamaindex-py-client
     #   openai
 pydantic-core==2.18.1
     # via pydantic
 pymongo==4.6.3
-    # via -r requirements.in
+    # via
+    #   -r requirements.in
+    #   llama-index-vector-stores-mongodb
 pypdf==4.2.0
     # via llama-index-readers-file
 python-dateutil==2.9.0.post0
@@ -204,13 +246,18 @@ python-dateutil==2.9.0.post0
 pytz==2024.1
     # via pandas
 pyyaml==6.0.1
-    # via llama-index-core
+    # via
+    #   datasets
+    #   huggingface-hub
+    #   llama-index-core
 regex==2024.4.16
     # via
     #   nltk
     #   tiktoken
 requests==2.31.0
     # via
+    #   datasets
+    #   huggingface-hub
     #   llama-index-core
     #   llama-index-legacy
     #   tiktoken
@@ -240,11 +287,14 @@ tiktoken==0.6.0
     #   llama-index-legacy
 tqdm==4.66.2
     # via
+    #   datasets
+    #   huggingface-hub
     #   llama-index-core
     #   nltk
     #   openai
 typing-extensions==4.11.0
     # via
+    #   huggingface-hub
     #   llama-index-core
     #   llama-index-legacy
     #   openai
@@ -267,5 +317,7 @@ wrapt==1.16.0
     # via
     #   deprecated
     #   llama-index-core
+xxhash==3.4.1
+    # via datasets
 yarl==1.9.4
     # via aiohttp

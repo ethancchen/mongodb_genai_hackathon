@@ -1,10 +1,18 @@
 # main development
+fireworks-ai
 llama-index
 llama-index-llms-fireworks
 pymongo
+
 
 # backend
 flask
 
 # deployment
 gunicorn
+
+# MongoDB with OpenAI
+llama-index-vector-stores-mongodb
+llama-index-embeddings-openai
+datasets
+pandas

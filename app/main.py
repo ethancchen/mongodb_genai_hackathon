@@ -1,9 +1,11 @@
+from os import environ, getenv
+
 from flask import Flask, jsonify, request
 from llama_index.core.llms import ChatMessage
 from llama_index.llms.fireworks import Fireworks
 
 app = Flask(__name__)
-llm = Fireworks()
+llm = Fireworks(model="accounts/fireworks/models/llama-v3-70b-instruct")
 
 
 def compile_conversation_history(ch: list[str]) -> list[ChatMessage]:
@@ -39,8 +41,14 @@ def get_answer():
 
 @app.route("/api/submit", methods=["POST"])
 def handle_assignment_submission():
-    pass
+    data = request.get_json()
+    question = data["question"]
+    conversation_history = data["conversation_history"]
 
 
-# if __name__ == "__main__":
-#     app.run(host="0.0.0.0", port=5601)
+if __name__ == "__main__":
+    # FIREWORKS_API_KEY = "FIREWORKS_API_KEY"
+    # if FIREWORKS_API_KEY not in environ:
+    #     raise ValueError(f"Please provide a {FIREWORKS_API_KEY}.")
+    # fw_api_key = getenv(FIREWORKS_API_KEY)
+    app.run(host="0.0.0.0", port=5601)
