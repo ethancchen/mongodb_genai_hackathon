@@ -7,11 +7,9 @@ llm = Fireworks()
 
 
 def compile_conversation_history(ch: list[str]) -> list[ChatMessage]:
-    lst = []
-    for idx, message in enumerate(ch):
-        curr_role = "user" if idx % 2 == 0 else "assistant"
-        lst.append(ChatMessage(role=curr_role, content=message))
-    return lst
+    return [
+        ChatMessage(role="user" if idx % 2 == 0 else "assistant", content=message) for idx, message in enumerate(ch)
+    ]
 
 
 @app.route("/")
@@ -34,9 +32,7 @@ def get_answer():
             content=base_system_message.format(original_question=original_question),
         ),
     ]
-    print("ch is", compile_conversation_history)
     messages.extend(compile_conversation_history(conversation_history))
-    print(messages)
     resp = llm.chat(messages).message.content
     return jsonify({"message": resp})
 
