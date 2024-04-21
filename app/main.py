@@ -1,10 +1,12 @@
 from os import environ, getenv
 
 from flask import Flask, jsonify, request
+from flaskcors import CORS, crossorigin
 from llama_index.core.llms import ChatMessage
 from llama_index.llms.fireworks import Fireworks
 
 app = Flask(__name__)
+cors = CORS(app)
 llm = Fireworks(model="accounts/fireworks/models/llama-v3-70b-instruct")
 
 

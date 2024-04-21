@@ -4,9 +4,9 @@ llama-index
 llama-index-llms-fireworks
 pymongo
 
-
 # backend
 flask
+Flask-Cors
 
 # deployment
 gunicorn
