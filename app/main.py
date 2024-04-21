@@ -1,12 +1,13 @@
 from os import environ, getenv
 
 from flask import Flask, jsonify, request
-from flaskcors import CORS, crossorigin
+from flaskcors import CORS, cross_origin
 from llama_index.core.llms import ChatMessage
 from llama_index.llms.fireworks import Fireworks
 
 app = Flask(__name__)
 cors = CORS(app)
+app.config["CORS_HEADERS"] = "Content-Type"
 llm = Fireworks(model="accounts/fireworks/models/llama-v3-70b-instruct")
 
 
@@ -22,6 +23,7 @@ def home():
 
 
 @app.route("/api/get_answer", methods=["POST"])
+@cross_origin()
 def get_answer():
     data = request.get_json()
     original_question = data["original_question"]
@@ -42,6 +44,7 @@ def get_answer():
 
 
 @app.route("/api/submit", methods=["POST"])
+@cross_origin
 def handle_assignment_submission():
     data = request.get_json()
     question = data["question"]
