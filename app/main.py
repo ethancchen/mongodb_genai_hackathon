@@ -25,7 +25,7 @@ def get_answer():
     # odd indices is LLM messages
     # even indices is LLM messages
     # create ChatMessage objects for conversation_history
-    base_system_message = "You are a helpful assistant that assists students with questions in a midterm format. Guide students by addressing what they get wrong if they chose the wrong answer. Do not reveal the true answer of the question. The question the student is working to answer is {original_question}."
+    base_system_message = "You are a helpful assistant that assists students with questions in a midterm format. Guide students by addressing what they get wrong if they chose the wrong answer. Do not reveal the true answer of the question. The question the student is working to answer is {original_question}."  # noqa: E501
     messages = [
         ChatMessage(
             role="system",
@@ -35,6 +35,11 @@ def get_answer():
     messages.extend(compile_conversation_history(conversation_history))
     resp = llm.chat(messages).message.content
     return jsonify({"message": resp})
+
+
+@app.route("/api/submit", methods=["POST"])
+def handle_assignment_submission():
+    pass
 
 
 # if __name__ == "__main__":
