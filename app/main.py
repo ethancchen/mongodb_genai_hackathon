@@ -1,7 +1,7 @@
 from os import environ, getenv
 
 from flask import Flask, jsonify, request
-from flaskcors import CORS, cross_origin
+from flask_cors import CORS, cross_origin
 from llama_index.core.llms import ChatMessage
 from llama_index.llms.fireworks import Fireworks
 
